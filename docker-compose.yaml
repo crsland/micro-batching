@@ -1,0 +1,18 @@
+version: '3.6'
+
+services:
+  ug-micro-batching:
+    build: ${PWD}/.
+    volumes:
+      - ${PWD}/src:/app/src
+      - ${PWD}/dist:/app/dist
+      - ${PWD}/tsconfig.json:/app/tsconfig.json
+    networks:
+      - ug-micro-batching
+    entrypoint: bash
+    command: -c 'yarn run start:dev'
+    env_file:
+      - .env
+networks:
+  ug-micro-batching:
+    name: ug-micro-batching

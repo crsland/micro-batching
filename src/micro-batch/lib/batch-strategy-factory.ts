@@ -25,6 +25,12 @@ export class BatchStrategyFactory {
             strategy = StrategyType.CAPACITY_WINDOW;
         }
 
+        console.log(`
+            ###############################################################
+            MicroBatch will be applied using strategy: ${strategy}
+            ###############################################################
+        `);
+
         const instance: BatchStrategyInterface = new (batchingStrategiesRegister.get(strategy))();
         // This could be replaced by a Configuration Options object that is passed to the constructur
         // of the strategies. That way it can be more extensible. Out Of Scope for now.

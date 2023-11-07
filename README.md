@@ -52,7 +52,11 @@ $ make test
 
 ## Technologies used
 Application code: Typescript  
-Container Runtime: Docker
+Container Runtime: Docker  
+
+Docker daemon version: 20.10.21   
+Typescript version: 5.0.0
+
 
 ## Workflow Description
 The application entrypoint is located in `src/app.ts`. Here is where the user initialises the `MicroBatchClient` library.  
@@ -110,7 +114,7 @@ Submits a job of type JobInterface
 ```typescript
 MicroBatchClient.submitJob(job: JobInterface);
 ```
-### shutdown()
+### shutDown()
 Gets executed when all the jobs are processed
 ```typescript
 MicroBatchClient.shutdown(callback: CallableFunction);

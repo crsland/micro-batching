@@ -127,6 +127,9 @@ MicroBatchClient.flush();
 It is specified that this is a test with several requirements open for interpretation and relatively time based.   
 Here is a list of trade offs and decissions that I made in this implementation:
 
+### Tests
+Tests are located within `src/micro-batch/test` directory. Intentially decided not to add 100% code coverage to avoid delaying the delivery of the exercise. Nonetheless, a sufficient amount of unit tests are provided covering the main use cases.
+
 ### Batching strategies
 The MicroBatching is done based on a capacity bucket. The bucket accumulates jobs. Once the bucket is full, the jobs in it are sent for processing. There are far more strategies for bacthing. Like Sliding Window, Fixed Window, Sessions, etc that requires more time and careful implementation.   
  
